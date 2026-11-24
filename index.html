@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>delulu · cartas na mesa</title>
+  <meta name="description" content="Portfólio de Harley Luiz — uma revista para folhear.">
+  <meta name="theme-color" content="#0b0912">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+      "pdfjs-dist": "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="cena" aria-label="Revista em 3D"></canvas>
+  <div class="vinheta" aria-hidden="true"></div>
+
+  <header class="titulo">
+    <span class="nome">delulu</span>
+    <span class="sub">cartas na mesa</span>
+  </header>
+
+  <div class="historia" aria-live="polite">
+    <section class="beat esq" data-in="-0.1" data-out="0.17">
+      <span class="kicker">uma tiragem em quatro tempos</span>
+      <h2>Toda tiragem começa<br>com uma pergunta.</h2>
+    </section>
+    <section class="beat dir" data-in="0.21" data-out="0.42">
+      <span class="kicker">da mesa, sobe uma caixa</span>
+      <h2>Esta aqui guarda<br>um portfólio.</h2>
+      <p>fotografia · campanha · design · ilustração</p>
+    </section>
+    <section class="beat esq" data-in="0.45" data-out="0.68">
+      <span class="kicker">seis arcanos</span>
+      <h2>Seis cartas.<br>Seis capítulos.</h2>
+      <p>o Louco, a Sacerdotisa, o Sol, os Enamorados, a Lua e o Enforcado</p>
+    </section>
+    <section class="beat topo" data-in="0.71" data-out="1.2">
+      <span class="kicker">a última pergunta é sua</span>
+      <h2>Quem não escolhe,<br>experimenta.</h2>
+      <p>pegue a chave e abra a caixa</p>
+    </section>
+  </div>
+  <div class="progresso" aria-hidden="true"><span id="barra"></span></div>
+
+  <p class="dica" id="dica">role para baixo</p>
+  <button class="pular" id="pular" type="button">pular história</button>
+
+  <nav class="controles" id="controles" aria-label="Navegação da revista" hidden>
+    <button id="anterior" type="button" aria-label="Página anterior">&#8249;</button>
+    <span id="contador" aria-live="polite">Capa</span>
+    <button id="proxima" type="button" aria-label="Próxima página">&#8250;</button>
+  </nav>
+
+  <p class="status" id="status" role="status"></p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
